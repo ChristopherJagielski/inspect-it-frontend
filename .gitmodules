@@ -1,0 +1,3 @@
+[submodule "inspect-it"]
+	path = inspect-it
+	url = https://github.com/PiotrZettt/inspect-it/
