@@ -1,46 +1,50 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const Canvas = props => {
 
     const canvasRef = useRef(null)
     const contextRef = useRef(null)
 
+    const [coords, setNewCoords] = useState({x:"", y:""})
+
     const img = new Image()
     img.src = props.image
-    // img.width = 750
-    // img.height = 450
 
     useEffect(() => {
         const canvas = canvasRef.current
         canvas.width = 750
         canvas.height = 450
         canvas.style.border = 2
-
+        console.log("draw")
         const context = canvas.getContext('2d')
-        // context.scale(1, 1)
-        context.fillStyle = 'rgb(221, 121, 38, 0.45)'
+
+        context.fillStyle = 'rgb(255, 0, 0, 0.22)'
         contextRef.current = context
-          
-        // context.fillStyle = '#FFFFFF'
-        // context.fillRect(0, 0, context.canvas.width, context.canvas.height)
+
         img.onload = () => {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.drawImage(img, 0, 0);
           };
-
-        console.log(props.image)
-        }, [img])
+        }, [props.image])
 
     const markDefect = ({nativeEvent}) => {
-            const {offsetX, offsetY} = nativeEvent;
-            contextRef.current.fillRect(offsetX, offsetY, 20, 20)
-            
+        const {offsetX, offsetY} = nativeEvent;
+        console.log('fff',props.enableMarking)
+        if (props.enableMarking) {
+            contextRef.current.fillRect(offsetX - 12, offsetY - 12, 25, 25);
+            setNewCoords({x: offsetX, y: offsetY})
+
+            props.setcoordinates(coords)
+        } else { 
+            window.alert('Pick a defect name first')
         }
 
-    return <canvas 
-            // style={{ width: 750, height: 500, border:2}} 
-            ref={canvasRef} {...props}
-            onMouseDown={markDefect}
+        console.log("click ", props)
+        }
+
+    return <canvas
+            ref={canvasRef}
+            onClick={markDefect}
             />
 }
 
