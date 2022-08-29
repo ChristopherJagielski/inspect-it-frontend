@@ -6,7 +6,7 @@ It lets us to gather and then anylise all the necessary data created during insp
 
 ## Backend
 ### Setting up the project in Django settings.py
-Most importantly the app needs static files directory to be set up as since it is a hybrid appliction it depends on django templates displaing javascript files.
+Most importantly the app needs static files directory to be set up as since it is a hybrid application it depends on django templates displaing javascript files.
 ### Creating Django models
 To interact with the database we have created three models: 
 - Part - Describes the item being inspected
@@ -25,6 +25,8 @@ Using the famous npx create-react-app
 Webpack and Babel let us comipling ready to use js file
 ### Spitting application into data entry and data anylising modules
 "Inspect" is the part where we can put all the data related to inspecting a part: its FG code, description, serial nunber, whether it is fine or what kind of a defect we found. We can also mark the area where the defects where found on a diagram.
+"Analyse" module lets us search the database by inspection date, part kind, serial number or defect type.
+It also displays defect(s) location(s) on the part diagram.
 
 ### "Canvas" Component as a visual representation on the defects
 The html "canvas" element is used to serve as a coordinates reference for marking and displaying defects locations.
