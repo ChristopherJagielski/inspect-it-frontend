@@ -26,8 +26,8 @@ Webpack and Babel let us comipling ready to use js file
 ### Spitting application into data entry and data anylising modules
 "Inspect" is the part where we can put all the data related to inspecting a part: its FG code, description, serial nunber, whether it is fine or what kind of a defect we found. We can also mark the area where the defects where found on a diagram.
 
-### "<Canvas/>" Component as a visual representation on the defects
-The "<canvas>" element is used to serve as a coordinates reference for marking and displaying defects locations.
+### "Canvas" Component as a visual representation on the defects
+The html "canvas" element is used to serve as a coordinates reference for marking and displaying defects locations.
 
 
   
