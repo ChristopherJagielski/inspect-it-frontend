@@ -23,7 +23,7 @@ Managing the app endpoints
 Using the famous npx create-react-app
 ### Setting up a JavaScript pipeline with Webpack and Babel
 Webpack and Babel let us comipling ready to use js file
-### Spitting application into data entry and data anylising modules
+### Spitting application into data entry and data analysing modules
 "Inspect" is the part where we can put all the data related to inspecting a part: its FG code, description, serial nunber, whether it is fine or what kind of a defect we found. We can also mark the area where the defects where found on a diagram.
 "Analyse" module lets us search the database by inspection date, part kind, serial number or defect type.
 It also displays defect(s) location(s) on the part diagram.
